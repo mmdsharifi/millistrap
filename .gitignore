@@ -39,5 +39,3 @@ logs
 node_modules
 npm-debug.log*
 pids
-
-dist
