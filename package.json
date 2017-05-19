@@ -1,0 +1,81 @@
+{
+    "name": "millistrap",
+    "version": "1.2.0",
+    "description": "A minimalist CSS framework.",
+    "homepage": "http://millistrap.github.io",
+    "repository": "mmdsharifi/millistrap",
+    "license": "MIT",
+    "author": "Mohammad Sharifi <mmdsharifi@yahoo.com>",
+    "main": "dist/millistrap.css",
+    "keywords": [
+        "bootstrap",
+        "css",
+        "css3",
+        "flexbox",
+        "front-end",
+        "framework",
+        "html",
+        "html5",
+        "kickstarter",
+        "less",
+        "responsive",
+        "mobile",
+        "mobile-first",
+        "postcss",
+        "responsive",
+        "sass",
+        "scss",
+        "stylus"
+    ],
+    "ignore": [
+        ".editorconfig",
+        ".github",
+        ".gitignore",
+        ".npmignore",
+        ".sasslintrc",
+        ".travis.yml",
+        "backstop.conf.js",
+        "bower.json",
+        "changelog.md",
+        "component.json",
+        "composer.json",
+        "package.js",
+        "package.json",
+        "src",
+        "test"
+    ],
+    "dependencies": {
+        "normalize.css": "latest"
+    },
+    "devDependencies": {
+        "autoprefixer": "^6.3.6",
+        "backstopjs": "^2.0.6",
+        "browser-sync": "^2.13.0",
+        "node-sass": "^3.7.0",
+        "npm-run-all": "^2.1.1",
+        "onchange": "^2.4.0",
+        "postcss-cli": "^2.5.2",
+        "rtlcss": "^2.0.7",
+        "sass-lint": "^1.8.2"
+    },
+    "engines": {
+        "node": "^6.0.0"
+    },
+    "scripts": {
+        "prestart": "npm install",
+        "pretest": "npm install",
+        "autoprefixer": "postcss -u autoprefixer --no-map.inline --autoprefixer.browsers 'last 1 versions' -r dist/*.css",
+        "rtlize": "postcss -u rtlcss -d dist/rtl dist/*.css",
+        "sass": "node-sass --output-style expanded src/millistrap.sass dist/millistrap.css && node-sass --output-style compressed src/millistrap.sass dist/millistrap.min.css",
+        "lint": "sass-lint -c .sasslintrc 'src/*.sass' --verbose --no-exit",
+        "build": "run-s lint sass autoprefixer",
+        "build-rtl": "run-s lint sass autoprefixer rtlize",
+        "watchRtl": "onchange src -- npm run build-rtl",
+        "watchLtr": "onchange src -- npm run build",
+        "serve": "browser-sync start --no-notify -s test --ss dist -f dist",
+        "start": "run-p watchRtl watchLtr serve",
+        "reference": "backstop reference --configPath=backstop.conf.js",
+        "compare": "backstop test --configPath=backstop.conf.js",
+        "test": "run-s build && run-p serve compare"
+    }
+}

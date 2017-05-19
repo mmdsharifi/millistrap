@@ -1,0 +1,50 @@
+{
+    "name": "millistrap",
+    "version": "1.2.0",
+    "description": "A minimalist CSS framework.",
+    "homepage": "http://millistrap.github.io",
+    "repository": "mmdsharifi/millistrap",
+    "license": "MIT",
+    "author": "Mohammad Sharifi <mmdsharifi@yahoo.com>",
+    "main": "dist/millistrap.css",
+    "keywords": [
+        "bootstrap",
+        "css",
+        "css3",
+        "flexbox",
+        "front-end",
+        "framework",
+        "html",
+        "html5",
+        "kickstarter",
+        "less",
+        "responsive",
+        "mobile",
+        "mobile-first",
+        "postcss",
+        "responsive",
+        "sass",
+        "scss",
+        "stylus"
+    ],
+    "ignore": [
+        ".editorconfig",
+        ".github",
+        ".gitignore",
+        ".npmignore",
+        ".sasslintrc",
+        ".travis.yml",
+        "backstop.conf.js",
+        "bower.json",
+        "changelog.md",
+        "component.json",
+        "composer.json",
+        "package.js",
+        "package.json",
+        "src",
+        "test"
+    ],
+    "dependencies": {
+        "normalize.css": "latest"
+    }
+}
